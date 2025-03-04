@@ -31,21 +31,22 @@ const SignIn = () => {
     const admindata=user.find(item=>values.email === 'admin@gmail.com' && values.password === '12345678');
 if(admindata){
   toast.success('welcome admin');
+
                     localStorage.setItem('id', admindata.id);
                     setIslogged(true);
-                    // console.log(isLogged);
+                    console.log(isLogged);
                       setTimeout(() =>
                        navigate("/admin")
-                    , 1000);
+                    , 1000); 
 }
     
     else if (foundUser) {
       localStorage.setItem('id', foundUser.id);  
-      // console.log(foundUser,'alskjdf')
+      console.log(foundUser,'alskjdf')
       setIslogged(true);
       toast.success('Login successful');
       setTimeout(() => {
-        navigate('/');
+        navigate('/');   
       }, 1000);
     } 
     else {
